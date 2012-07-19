@@ -1,3 +1,6 @@
+//
+// Display
+//
 .inline-block() {
     display: -moz-inline-stack;
     display: inline-block;
@@ -5,4 +8,27 @@
     *vertical-align: auto;
     zoom: 1;
     *display: inline;
+}
+
+
+//
+// Opacity
+//
+.opacity(@level) {
+    opacity: @level;
+}
+
+.transparent() { .opacity(0); }
+.opaque() { .opacity(1); }
+
+//
+// Background
+//
+.rgba-background(@color, @aplha) {
+    background: @color;
+
+    @hue: hue(@color);
+    @saturation: saturation(@color);
+    @lightness: lightness(@color);
+    background: hsla(@hue, @saturation, @lightness, @aplha);
 }

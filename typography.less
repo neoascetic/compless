@@ -1,0 +1,38 @@
+//
+// Links
+//
+.unstyled-link() {
+    color: inherit;
+    text-decoration: inherit;
+    cursor: inherit;
+    &:active, &focus { outline: none; }
+}
+
+.hover-link() {
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+}
+
+.link-colors(@normal) {
+    color: @normal;
+}
+
+.link-colors(@normal, @hover) {
+    .link-colors(@normal);
+    &:hover { color: @hover; }
+}
+
+.link-colors(@normal, @hover, @active) {
+    .link-colors(@normal, @hover);
+    &:active { color: @active; }
+}
+
+.link-colors(@normal, @hover, @active, @visited) {
+    .link-colors(@normal, @hover, @active);
+    &:visited { color: @visited; }
+}
+
+.link-colors(@normal, @hover, @active, @visited, @focus) {
+    .link-colors(@normal, @hover, @active, @visited);
+    &:focus { color: @focus; }
+}

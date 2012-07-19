@@ -1,0 +1,29 @@
+//
+// Clearfix
+//
+.clearfix() {
+    overflow: hidden;
+    zoom: 1;
+}
+
+
+//
+// Floats
+//
+.float(@side: left) {
+    display: inline;
+    float: @side;
+}
+
+.float-left() {
+    .float(left);
+}
+
+.float-right() {
+    .float(right);
+}
+
+.reset-float(@display: block) {
+    float: none;
+    display: @display;
+}
