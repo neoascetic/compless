@@ -14,7 +14,9 @@
 //
 // Opacity
 //
-.opacity(@level) {
+@opacity: .5;
+
+.opacity(@level: @opacity) {
     opacity: @level;
 }
 
@@ -25,7 +27,9 @@
 //
 // Background
 //
-.rgba-background(@color, @aplha) {
+@rgba-background: .5;
+
+.rgba-background(@color, @aplha: @rgba-background) {
     background: @color;
 
     @hue: hue(@color);
