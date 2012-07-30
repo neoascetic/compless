@@ -94,3 +94,57 @@
     .border-top-left-radius(@radius);
     .border-bottom-left-radius(@radius);
 }
+
+
+//
+// Transition
+//
+@transition-property: all;
+@transition-duration: .2s;
+@transition-timing-function: ease;
+@transition-delay: 0;
+
+// unfortunately, for now you can specify only one property with ".transition" mixin
+// to specify more, use ".transition-property" mixin which can accept up to 5 properties
+.transition(
+    @property: @transition-property,
+    @duration: @transition-duration,
+    @timing-function: @transition-timing-function,
+    @delay: @transition-delay) {
+        -webkit-transition: @arguments;
+        -moz-transition: @arguments;
+        -o-transition: @arguments;
+        transition: @arguments;
+}
+
+// up to 5 properties
+.transition-property(
+    @property1: @transition-property,
+    @property2: @transition-property,
+    @property3: @transition-property,
+    @property4: @transition-property,
+    @property5: @transition-property) {
+        -webkit-transition-property: @arguments;
+        -moz-transition-property: @arguments;
+        -o-transition-property: @arguments;
+        transition-property: @arguments;
+}
+
+.transition-duration(@duration: @transition-duration) {
+    -webkit-transition-duration: @duration;
+    -moz-transition-duration: @duration;
+    -o-transition-duration: @duration;
+    transition-duration: @duration;
+}
+.transition-timing-function(@timing-function: @transition-timing-function) {
+    -webkit-transition-timing-function: @timing-function;
+    -moz-transition-timing-function: @timing-function;
+    -o-transition-timing-function: @timing-function;
+    transition-timing-function: @timing-function;
+}
+.transition-delay(@delay: @transition-delay) {
+    -webkit-transition-delay: @delay;
+    -moz-transition-delay: @delay;
+    -o-transition-delay: @delay;
+    transition-delay: @delay;
+}
