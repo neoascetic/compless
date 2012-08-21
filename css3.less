@@ -214,3 +214,14 @@
         font-style: @style;
     }
 }
+
+
+//
+// Box-shadow
+//
+@shadow: 0 0 5px #333;
+.box-shadow(@shadow: @shadow) {
+    -webkit-box-shadow: @shadow;
+    -moz-box-shadown: @shadow;
+    box-shadow: @shadow;
+}
