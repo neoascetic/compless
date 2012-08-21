@@ -200,3 +200,17 @@
 
     .linear-gradient(@from, @to, @fallback);
 }
+
+
+//
+// Font-face
+//
+.font-face(@name, @font-files, @weight: normal, @style: normal) {
+    @font-face {
+        src: @font-files;
+
+        font-family: @name;
+        font-weight: @weight;
+        font-style: @style;
+    }
+}
