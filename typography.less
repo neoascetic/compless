@@ -40,15 +40,11 @@
 //
 // Text
 //
-.ellipsis() {
+.ellipsis(@white-space: inherit) {
+    white-space: @white-space;
     overflow: hidden;
 
     -o-text-overflow: ellipsis;
     -ms-text-overflow: ellipsis;
     text-overflow: ellipsis;
-}
-
-.ellipsis(@white-space: nowrap) {
-    white-space: @white-space;
-    .ellipsis;
 }
