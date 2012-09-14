@@ -36,3 +36,18 @@
     .link-colors(@normal, @hover, @active, @visited);
     &:focus { color: @focus; }
 }
+
+//
+// Text
+//
+.ellipsis() {
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+
+    text-overflow: ellipsis;
+}
+
+.ellipsis(@white-space: nowrap) {
+    white-space: @white-space;
+    .ellipsis;
+}
