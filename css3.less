@@ -109,7 +109,6 @@
 @transition-delay: 0;
 
 // unfortunately, for now you can specify only one property with ".transition" mixin
-// to specify more, use ".transition-property" mixin which can accept up to 5 properties
 .transition(
     @property: @transition-property,
     @duration: @transition-duration,
@@ -121,17 +120,11 @@
         transition: @arguments;
 }
 
-// up to 5 properties
-.transition-property(
-    @property1: @transition-property,
-    @property2: @transition-property,
-    @property3: @transition-property,
-    @property4: @transition-property,
-    @property5: @transition-property) {
-        -webkit-transition-property: @arguments;
-        -moz-transition-property: @arguments;
-        -o-transition-property: @arguments;
-        transition-property: @arguments;
+.transition-property(@property: @transition-property) {
+        -webkit-transition-property: @property;
+        -moz-transition-property: @property;
+        -o-transition-property: @property;
+        transition-property: @property;
 }
 
 .transition-duration(@duration: @transition-duration) {
