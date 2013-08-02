@@ -161,37 +161,17 @@
 // Gradients
 // (in Compass it is part of Images framework)
 //
-.linear-gradient(@start, @stop) {
-    background: -webkit-gradient(
-                    linear,
-                    left top,
-                    left bottom,
-                    color-stop(0, @start),
-                    color-stop(1, @stop));
-
-    background: -ms-linear-gradient(
-                    top,
-                    @start,
-                    @stop);
-
-    background: -moz-linear-gradient(
-                    center top,
-                    @start 0%,
-                    @stop 100%);
-
-    background: linear-gradient(top, @start, @stop);
+.linear-gradient(@direction, @start, @rest...) {
+    background: -webkit-linear-gradient(@direction, @start, @rest);
+    background: -moz-linear-gradient(@direction, @start, @rest);
+    background: -ms-linear-gradient(@direction, @start, @rest);
+    background: -o-linear-gradient(@direction, @start, @rest);
+    background: linear-gradient(@direction, @start, @rest);
 }
 
-.linear-gradient(@start, @stop, @fallback) {
+.linear-gradient-with-css2-fallback(@fallback, @direction, @start, @rest...) {
     background: @fallback;
-    .linear-gradient(@start, @stop);
-}
-
-.linear-grayscale-gradient(@start: 0, @stop: 255, @fallback: black) {
-    @from: rgb(@start, @start, @start);
-    @to: rgb(@stop, @stop, @stop);
-
-    .linear-gradient(@from, @to, @fallback);
+    .linear-gradient(@direction, @start, @rest);
 }
 
 
