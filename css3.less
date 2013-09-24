@@ -194,3 +194,28 @@
     -moz-box-shadown: @shadow;
     box-shadow: @shadow;
 }
+
+//
+// Transform
+//
+@transform: translate3d(0,0,0);
+.transform(@transform: @transform) {
+    -webkit-transform: @transform;
+    -moz-transform: @transform;
+    -ms-transform: @transform;
+    -o-transform: @transform;
+    transform: @transform;
+}
+
+//
+// Filters
+//
+.filter(@filter: @filter) {
+    -webkit-filter: @filter;
+    -moz-filter: @filter;
+    -o-filter: @filter;
+    -ms-filter: @filter;
+
+    //Enables openGL
+    .transform(translate3d(0,0,0));
+}
