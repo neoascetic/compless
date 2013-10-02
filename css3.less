@@ -51,8 +51,14 @@
 }
 
 // just an alias
-.border-radius(@top-right, @bottom-right, @bottom-left, @top-left) {
+.border-radius(@top-left, @top-right, @bottom-right, @bottom-left) {
     .border-radius(@arguments);
+}
+
+.border-top-left-radius(@radius) {
+    -webkit-border-top-left-radius: @radius;
+    -moz-border-radius-topleft: @radius;
+    border-top-left-radius: @radius;
 }
 
 .border-top-right-radius(@radius) {
@@ -73,11 +79,6 @@
     border-bottom-left-radius: @radius;
 }
 
-.border-top-left-radius(@radius) {
-    -webkit-border-top-left-radius: @radius;
-    -moz-border-radius-topleft: @radius;
-    border-top-left-radius: @radius;
-}
 
 .border-top-radius(@radius) {
     .border-top-left-radius(@radius);
