@@ -104,43 +104,39 @@
 //
 // Transition
 //
-@transition-property: all;
-@transition-duration: .2s;
-@transition-timing-function: ease;
-@transition-delay: 0;
+@default-transition-property: all;
+@default-transition-duration: 1s;
+@default-transition-function: ease;
+@default-transition-delay: 0;
 
-// unfortunately, for now you can specify only one property with ".transition" mixin
-.transition(
-    @property: @transition-property,
-    @duration: @transition-duration,
-    @timing-function: @transition-timing-function,
-    @delay: @transition-delay) {
-        -webkit-transition: @arguments;
-        -moz-transition: @arguments;
-        -o-transition: @arguments;
-        transition: @arguments;
+.transition(@transition, ...) {
+  @transitions: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
+  -webkit-transition: @transitions;
+  -moz-transition: @transitions;
+  -o-transition: @transitions;
+  transition: @transitions;
 }
 
-.transition-property(@property: @transition-property) {
-        -webkit-transition-property: @property;
-        -moz-transition-property: @property;
-        -o-transition-property: @property;
-        transition-property: @property;
+.transition-property(@property: @default-transition-property) {
+    -webkit-transition-property: @property;
+    -moz-transition-property: @property;
+    -o-transition-property: @property;
+    transition-property: @property;
 }
 
-.transition-duration(@duration: @transition-duration) {
+.transition-duration(@duration: @default-transition-duration) {
     -webkit-transition-duration: @duration;
     -moz-transition-duration: @duration;
     -o-transition-duration: @duration;
     transition-duration: @duration;
 }
-.transition-timing-function(@timing-function: @transition-timing-function) {
+.transition-timing-function(@timing-function: @default-transition-function) {
     -webkit-transition-timing-function: @timing-function;
     -moz-transition-timing-function: @timing-function;
     -o-transition-timing-function: @timing-function;
     transition-timing-function: @timing-function;
 }
-.transition-delay(@delay: @transition-delay) {
+.transition-delay(@delay: @default-transition-delay) {
     -webkit-transition-delay: @delay;
     -moz-transition-delay: @delay;
     -o-transition-delay: @delay;
@@ -196,6 +192,7 @@
     box-shadow: @shadow;
 }
 
+
 //
 // Transform
 //
@@ -207,6 +204,7 @@
     -o-transform: @transform;
     transform: @transform;
 }
+
 
 //
 // Filters
