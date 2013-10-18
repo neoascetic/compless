@@ -228,3 +228,23 @@
     -moz-appearance: @appearance;
     appearance: @appearance;
 }
+
+//
+// Calc Width
+//
+.calc-width(@calc) {
+    width: -moz-calc(@calc);
+    width: -webkit-calc(@calc);
+    width: -o-calc(@calc);
+    width: calc(@calc);
+}
+
+//
+// Calc Height
+//
+.calc-height(@calc) {
+    height: -moz-calc(@calc);
+    height: -webkit-calc(@calc);
+    height: -o-calc(@calc);
+    height: calc(@calc);
+}
