@@ -1,3 +1,3 @@
 language: node_js
-install: npm install less@stable
+install: npm install less
 script: ./node_modules/.bin/lessc .test.less > /tmp/compless-test.css
