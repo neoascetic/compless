@@ -6,9 +6,7 @@ Compless
 [![Build Status](https://travis-ci.org/neoascetic/compless.png?branch=master)](https://travis-ci.org/neoascetic/compless)
 
 Mixins are divided into categories in a way how it done in the compass'
-[reference][]. See sources to find what is already implemented. Some mixins
-will not be implemented, however, because they make no sense -
-[text-shadow][], for example.
+[reference][]. See sources to find what is already implemented.
 
 To start using this set, simply extract an [archive][] into folder where your
 less files lie, rename extracted directory to `compless` and put
