@@ -1,9 +1,7 @@
-Compless
+Compless [![[Build Status]](https://travis-ci.org/neoascetic/compless.png?branch=master)](https://travis-ci.org/neoascetic/compless)
 =============================================
 
 **It's like [compass][], but for [less][]**
-
-[![Build Status](https://travis-ci.org/neoascetic/compless.png?branch=master)](https://travis-ci.org/neoascetic/compless)
 
 Mixins are divided into categories in a way how it done in the compass'
 [reference][]. See sources to find what is already implemented.
