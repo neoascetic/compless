@@ -218,7 +218,7 @@
 //
 @shadow: 0 0 5px #333;
 
-.box-shadow(@shadows...) {
+.box-shadow(@shadow: @shadow, ...) {
   @shadows: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
 
   -webkit-box-shadow: @shadows;
