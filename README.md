@@ -14,7 +14,7 @@ The main purpose of this project is to give a developer mixins set similar to
 [compass' one][reference]. So, if you want to create a pull request, make sure
 that new functionality as similar to compass' analogues as possible.
 
-Licensed under [WTFPL](http://www.wtfpl.net/).
+Licensed under [![WTFPL](http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png)](http://www.wtfpl.net/).
 
 
 
