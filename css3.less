@@ -111,7 +111,7 @@
 //
 // Font-face
 //
-.font-face(@name, @file-name, @weight: 400, @style: normal, @version: "1.0") {
+.font-face(@name, @path-fonts, @file-name, @weight: 400, @style: normal, @version: "1.0") {
   @font-face {
     font-family: @name;
     src: url("@{path-fonts}@{file-name}.eot?v=@{version}");
