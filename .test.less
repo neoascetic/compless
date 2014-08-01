@@ -67,6 +67,12 @@ css3 {
   .transition-delay(1s);
 
   .e-calc(width, "100% - 1em");
+
+  @fonts: "/fonts/";
+  @main-font-name: "Open Sans";
+  .e-bulletproof-font-face(@main-font-name, @fonts, "open-sans-regular");
+  .e-bulletproof-font-face(@main-font-name, @fonts, "open-sans-bold", 700);
+  .e-bulletproof-font-face(@main-font-name, @fonts, "open-sans-italic", 400, italic);
 }
 
 

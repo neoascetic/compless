@@ -265,3 +265,20 @@
   @{property}: -moz-calc(@value);
   @{property}: calc(@value);
 }
+
+
+//
+// Bulletproof Font-face (an extension)
+//
+.e-bulletproof-font-face(@name, @path-fonts, @file-name, @weight: 400, @style: normal, @version: "1.0") {
+  @font-face {
+    font-family: @name;
+    src: url("@{path-fonts}@{file-name}.eot?v=@{version}");
+    src: url("@{path-fonts}@{file-name}.eot?#iefix&v=@{version}") format("embedded-opentype"),
+         url("@{path-fonts}@{file-name}.woff?v=@{version}") format("woff"),
+         url("@{path-fonts}@{file-name}.ttf?v=@{version}") format("truetype"),
+         url("@{path-fonts}@{file-name}.svg?v=@{version}#@{file-name}") format("svg");
+    font-weight: @weight;
+    font-style: @style;
+  }
+}
