@@ -255,3 +255,13 @@
   -o-transition-delay: @delay;
   transition-delay: @delay;
 }
+
+
+//
+// Calc (an extension)
+//
+.e-calc(@property, @value) {
+  @{property}: -webkit-calc(@value);
+  @{property}: -moz-calc(@value);
+  @{property}: calc(@value);
+}
