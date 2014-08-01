@@ -28,11 +28,9 @@ css3 {
   .filter(grayscale(50%), blur(1px));
 
   // TODO: test eot argument support
-  @fonts: "/fonts/";
-  @main-font-name: "Open Sans";
-  .font-face(@main-font-name, @fonts, "open-sans-regular");
-  .font-face(@main-font-name, @fonts, "open-sans-bold", 700);
-  .font-face(@main-font-name, @fonts, "open-sans-italic", 400, italic);
+  .font-face('FooFont', url('fonts/foo.otf'));
+  .font-face('FooBoldFont', url('fonts/fooBold.otf'), bold);
+  .font-face('FooItalicFont', url('fonts/fooItalic.otf'), normal, italic);
 
   // TODO: there must be testing of mixins from "images" framework
   .linear-gradient(top left, red, green);
@@ -67,6 +65,14 @@ css3 {
   .transition-duration(1s);
   .transition-timing-function(linear);
   .transition-delay(1s);
+
+  .e-calc(width, "100% - 1em");
+
+  @fonts: "/fonts/";
+  @main-font-name: "Open Sans";
+  .e-bulletproof-font-face(@main-font-name, @fonts, "open-sans-regular");
+  .e-bulletproof-font-face(@main-font-name, @fonts, "open-sans-bold", 700);
+  .e-bulletproof-font-face(@main-font-name, @fonts, "open-sans-italic", 400, italic);
 }
 
 
