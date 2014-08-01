@@ -69,6 +69,89 @@
 
 
 //
+// Box-shadow
+//
+@shadow: 0 0 5px #333;
+
+.box-shadow(@shadow: @shadow, ...) {
+  @shadows: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
+
+  -webkit-box-shadow: @shadows;
+  -moz-box-shadown: @shadows;
+  box-shadow: @shadows;
+}
+
+
+//
+// Box sizing
+//
+.box-sizing(@box-sizing) {
+  -webkit-box-sizing: @box-sizing;
+  -moz-box-sizing: @box-sizing;
+  box-sizing: @box-sizing;
+}
+
+
+//
+// Filters
+//
+.filter(@filters...) {
+  @filters: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
+
+  -webkit-filter: @filters;
+  -moz-filter: @filters;
+  -o-filter: @filters;
+  -ms-filter: @filters;
+
+  // Enables openGL
+  .transform(translate3d(0, 0, 0));
+}
+
+
+//
+// Font-face
+//
+.font-face(@name, @font-files, @weight: normal, @style: normal) {
+  @font-face {
+    src: @font-files;
+
+    font-family: @name;
+    font-weight: @weight;
+    font-style: @style;
+  }
+}
+
+
+//
+// Gradients
+// (in Compass it is a part of Images framework)
+//
+.linear-gradient(@direction, @start, @rest, @fallback:@rest...) {
+  background: @fallback;
+  background: -webkit-linear-gradient(@direction, @start, @rest);
+  background: -moz-linear-gradient(@direction, @start, @rest);
+  background: -ms-linear-gradient(@direction, @start, @rest);
+  background: -o-linear-gradient(@direction, @start, @rest);
+  background: linear-gradient(@direction, @start, @rest);
+}
+
+
+//
+// Background
+//
+@rgba-background: .5;
+
+.rgba-background(@color, @alpha: @rgba-background) {
+  background: @color;
+
+  @hue: hue(@color);
+  @saturation: saturation(@color);
+  @lightness: lightness(@color);
+  background: hsla(@hue, @saturation, @lightness, @alpha);
+}
+
+
+//
 // Inline Block
 //
 @inline-block-alignment: middle;
@@ -102,17 +185,16 @@
 
 
 //
-// Background
+// Transform
 //
-@rgba-background: .5;
+@transform: translate3d(0, 0, 0);
 
-.rgba-background(@color, @alpha: @rgba-background) {
-  background: @color;
-
-  @hue: hue(@color);
-  @saturation: saturation(@color);
-  @lightness: lightness(@color);
-  background: hsla(@hue, @saturation, @lightness, @alpha);
+.transform(@transform: @transform) {
+  -webkit-transform: @transform;
+  -moz-transform: @transform;
+  -ms-transform: @transform;
+  -o-transform: @transform;
+  transform: @transform;
 }
 
 
@@ -172,86 +254,4 @@
   -moz-transition-delay: @delay;
   -o-transition-delay: @delay;
   transition-delay: @delay;
-}
-
-
-//
-// Box sizing
-//
-.box-sizing(@box-sizing) {
-  -webkit-box-sizing: @box-sizing;
-  -moz-box-sizing: @box-sizing;
-  box-sizing: @box-sizing;
-}
-
-
-//
-// Gradients
-// (in Compass it is part of Images framework)
-//
-.linear-gradient(@direction, @start, @rest, @fallback:@rest...) {
-  background: @fallback;
-  background: -webkit-linear-gradient(@direction, @start, @rest);
-  background: -moz-linear-gradient(@direction, @start, @rest);
-  background: -ms-linear-gradient(@direction, @start, @rest);
-  background: -o-linear-gradient(@direction, @start, @rest);
-  background: linear-gradient(@direction, @start, @rest);
-}
-
-
-//
-// Font-face
-//
-.font-face(@name, @font-files, @weight: normal, @style: normal) {
-  @font-face {
-    src: @font-files;
-
-    font-family: @name;
-    font-weight: @weight;
-    font-style: @style;
-  }
-}
-
-
-//
-// Box-shadow
-//
-@shadow: 0 0 5px #333;
-
-.box-shadow(@shadows...) {
-  @shadows: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
-
-  -webkit-box-shadow: @shadows;
-  -moz-box-shadown: @shadows;
-  box-shadow: @shadows;
-}
-
-
-//
-// Transform
-//
-@transform: translate3d(0, 0, 0);
-
-.transform(@transform: @transform) {
-  -webkit-transform: @transform;
-  -moz-transform: @transform;
-  -ms-transform: @transform;
-  -o-transform: @transform;
-  transform: @transform;
-}
-
-
-//
-// Filters
-//
-.filter(@filters...) {
-  @filters: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
-
-  -webkit-filter: @filters;
-  -moz-filter: @filters;
-  -o-filter: @filters;
-  -ms-filter: @filters;
-
-  // Enables openGL
-  .transform(translate3d(0, 0, 0));
 }

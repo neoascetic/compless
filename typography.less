@@ -1,50 +1,55 @@
 //
 // Links
 //
-.unstyled-link() {
-    color: inherit;
-    text-decoration: inherit;
-    cursor: inherit;
-    &:active, &:focus { outline: none; }
-}
-
 .hover-link() {
-    text-decoration: none;
-    &:hover { text-decoration: underline; }
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
 }
 
 .link-colors(@normal) {
-    color: @normal;
+  color: @normal;
 }
 
 .link-colors(@normal, @hover) {
-    .link-colors(@normal);
-    &:hover { color: @hover; }
+  .link-colors(@normal);
+  &:hover { color: @hover; }
 }
 
 .link-colors(@normal, @hover, @active) {
-    .link-colors(@normal, @hover);
-    &:active { color: @active; }
+  .link-colors(@normal, @hover);
+  &:active { color: @active; }
 }
 
 .link-colors(@normal, @hover, @active, @visited) {
-    .link-colors(@normal, @hover, @active);
-    &:visited { color: @visited; }
+  .link-colors(@normal, @hover, @active);
+  &:visited { color: @visited; }
 }
 
 .link-colors(@normal, @hover, @active, @visited, @focus) {
-    .link-colors(@normal, @hover, @active, @visited);
-    &:focus { color: @focus; }
+  .link-colors(@normal, @hover, @active, @visited);
+  &:focus { color: @focus; }
 }
+
+.unstyled-link() {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+  &:active, &:focus { outline: none; }
+}
+
 
 //
 // Text
 //
-.ellipsis(@white-space: nowrap) {
-    white-space: @white-space;
-    overflow: hidden;
+.ellipsis(@no-wrap) when not (@no-wrap = true) {
+  overflow: hidden;
 
-    -o-text-overflow: ellipsis;
-    -ms-text-overflow: ellipsis;
-    text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.ellipsis(@no-wrap: true) when (@no-wrap = true) {
+  white-space: nowrap;
+  .ellipsis(false);
 }
