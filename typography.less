@@ -43,10 +43,7 @@
 //
 .ellipsis(@no-wrap) when not (@no-wrap = true) {
   overflow: hidden;
-
-  -o-text-overflow: ellipsis;
-  -ms-text-overflow: ellipsis;
-  text-overflow: ellipsis;
+  .prefix(text-overflow, ellipsis, ms o);
 }
 
 .ellipsis(@no-wrap: true) when (@no-wrap = true) {
