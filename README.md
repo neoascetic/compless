@@ -1,5 +1,5 @@
-Compless [![[Build Status]](https://travis-ci.org/neoascetic/compless.png?branch=master)](https://travis-ci.org/neoascetic/compless)
-=============================================
+Compless [![](https://img.shields.io/travis/neoascetic/compless.svg?style=flat-square)](https://travis-ci.org/neoascetic/compless) [![](https://img.shields.io/badge/license-WTFPL-green.svg?style=flat-square)](http://www.wtfpl.net/)
+========
 
 **It's like [compass][], but for [less][]**
 
@@ -16,8 +16,6 @@ that new functionality as similar to compass' analogues as possible.
 
 However,  sometimes compass  doesn't  fit our  need. Because  of  this we  have
 support for mixins called "extensions". They all have "e-" prefix.
-
-Licensed under [![WTFPL](http://www.wtfpl.net/wp-content/uploads/2012/12/wtfpl-badge-4.png)](http://www.wtfpl.net/)
 
 
 
