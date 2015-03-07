@@ -176,6 +176,10 @@
   .prefix(transform, @transform);
 }
 
+.backface-visibility(@visibility: hidden) {
+  .prefix(backface-visibility, @visibility, webkit moz)
+}
+
 
 //
 // Transition
