@@ -1,0 +1,16 @@
+@prefixes: webkit moz ms o;
+
+.prefix(@property, @value) {
+  .prefix(@property, @value, @prefixes);
+}
+
+.prefix(@property, @value, @prefixes) {
+  .prefix(@property, @value, @prefixes, 1);
+  @{property}: @value;
+}
+
+.prefix(@property, @value, @prefixes, @index) when (@index > 0) and (length(@prefixes) >= @index) {
+  @prefix: extract(@prefixes, @index);
+  -@{prefix}-@{property}: @value;
+  .prefix(@property, @value, @prefixes, @index + 1);
+}
