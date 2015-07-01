@@ -117,7 +117,18 @@
   background: -moz-linear-gradient(@direction, @start, @rest);
   background: -ms-linear-gradient(@direction, @start, @rest);
   background: -o-linear-gradient(@direction, @start, @rest);
-  background: linear-gradient(@direction, @start, @rest);
+  & when (@direction = top) {
+    background: linear-gradient(to bottom, @start, @rest);
+  }
+  & when (@direction = left) {
+    background: linear-gradient(to right, @start, @rest);
+  }
+  & when (@direction = right) {
+    background: linear-gradient(to left, @start, @rest);
+  }
+  & when (@direction = bottom) {
+    background: linear-gradient(to top, @start, @rest);
+  }
 }
 
 
