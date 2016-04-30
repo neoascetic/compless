@@ -2,18 +2,19 @@
 // Clearfix
 //
 .clearfix() {
-    overflow: hidden;
-    zoom: 1;
+  overflow: hidden;
+  zoom: 1;
 }
+
 .micro-clearfix() {
-    &:before, &:after {
-        content: "";
-        display: table;
-    }
-    &:after {
-        clear: both;
-    }
-    zoom: 1;
+  &:before, &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+  zoom: 1;
 }
 
 
@@ -21,19 +22,19 @@
 // Floats
 //
 .float(@side: left) {
-    display: inline;
-    float: @side;
+  display: inline;
+  float: @side;
 }
 
 .float-left() {
-    .float(left);
+  .float(left);
 }
 
 .float-right() {
-    .float(right);
+  .float(right);
 }
 
 .reset-float(@display: block) {
-    float: none;
-    display: @display;
+  float: none;
+  display: @display;
 }
