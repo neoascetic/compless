@@ -1,4 +1,4 @@
-Compless [![](https://img.shields.io/travis/neoascetic/compless.svg?style=flat-square)](https://travis-ci.org/neoascetic/compless) [![](https://img.shields.io/badge/license-WTFPL-green.svg?style=flat-square)](http://www.wtfpl.net/)
+Compless [![](https://img.shields.io/badge/license-WTFPL-green.svg?style=flat-square)](http://www.wtfpl.net/)
 ========
 
 **It's like [compass][], but for [less][]**
